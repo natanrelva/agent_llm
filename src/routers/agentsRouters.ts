@@ -4,6 +4,6 @@ import { customerService } from "../handlers/agentsHandlers";
 
 const router = Router()
 
-router.post('customer_service', customerService)
+router.post('/customer_service', customerService)
 
 export default  router

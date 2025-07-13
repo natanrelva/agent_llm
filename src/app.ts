@@ -7,7 +7,7 @@ const server = express()
 
 server.use(express.json())
 
-server.use("api", agenteRouters)
+server.use("/api", agenteRouters)
 
 server.listen(SERVER_PORT, () => {
   console.log(`AGENTE_SERVER | localhost:${SERVER_PORT}`)
