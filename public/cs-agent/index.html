@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat com Agente CS</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background-color: #e6f7e6; }
+        .chat-container { background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 90%; max-width: 600px; display: flex; flex-direction: column; height: 70vh; }
+        h2 { color: #333; text-align: center; margin-bottom: 20px; }
+        #chat-box { flex-grow: 1; border: 1px solid #ddd; border-radius: 5px; padding: 10px; overflow-y: auto; margin-bottom: 10px; background-color: #f9f9f9; }
+        .message { margin-bottom: 8px; padding: 8px 12px; border-radius: 15px; max-width: 80%; }
+        .user-message { background-color: #dcf8c6; align-self: flex-end; margin-left: auto; }
+        .agent-message { background-color: #e0e0e0; align-self: flex-start; margin-right: auto; }
+        .input-area { display: flex; }
+        #user-input { flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-right: 10px; }
+        #send-button { background-color: #007bff; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
+        #send-button:hover { background-color: #0056b3; }
+        .loading-indicator { text-align: center; padding: 10px; color: #555; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Agente de Atendimento ao Cliente</h2>
+        <div id="chat-box"></div>
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Digite sua mensagem...">
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+    <script src="/cs-agent/script.js"></script>
+</body>
+</html>
