@@ -1,12 +1,27 @@
 import { Request, Response } from "express"
 
-export const customerService = (req: Request, res: Response) => {
+import ollama from "ollama"
+
+export const customerService = async (req: Request, res: Response) => {
+
+  const { messages } = req.body
+
+  console.log("REQ: ", JSON.stringify(req.body))
+
+  const response = await ollama.chat({
+    model: "llama3.1",
+    messages: [{
+      role: "user", content: messages
+    }]
+  })
+
+  console.log("RESPONSE: ", JSON.stringify(response))
 
   try {
-    res.status(200).json("ok")
+    return res.status(200).json(response)
   } catch (error) {
-    res.status(500).json({
-      error: JSON.stringify(error)
+    return res.status(500).json({
+      error
     })
   }
 
